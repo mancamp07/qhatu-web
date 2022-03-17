@@ -5,6 +5,7 @@ import ListItemText from '@mui/material/ListItemText';
 import HomeIcon from '@mui/icons-material/Home';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SettingsIcon from '@mui/icons-material/Settings';
+import ErrorIcon from '@mui/icons-material/Error';
 import { Link } from 'react-router-dom';
 
 export const MenuQhatu = (
@@ -15,17 +16,27 @@ export const MenuQhatu = (
       </ListItemIcon>
       <ListItemText primary="Principal" />
     </ListItemButton>
+
     <ListItemButton component={Link} to={'/purchases'}>
       <ListItemIcon>
         <ShoppingCartIcon />
       </ListItemIcon>
       <ListItemText primary="Compras" />
     </ListItemButton>
+
     <ListItemButton component={Link} to={'/settings'}>
       <ListItemIcon>
         <SettingsIcon />
       </ListItemIcon>
       <ListItemText primary="Configuración" />
     </ListItemButton>
+
+    <ListItemButton component={Link} to={'/prueba'}>
+      <ListItemIcon>
+        <ErrorIcon />
+      </ListItemIcon>
+      <ListItemText primary="Error 404" />
+    </ListItemButton>
+
   </React.Fragment>
 );

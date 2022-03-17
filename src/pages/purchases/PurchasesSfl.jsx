@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import instance from '../../axios/instance';
 import PurchasesStl from './PurchasesStl';
 
+
 const PurchasesSfl = () => {
   const [products, setProducts] = useState({
     loading: true,
@@ -13,6 +14,14 @@ const PurchasesSfl = () => {
       setProducts({ loading: true });
       const products = await instance.get('/gtw-prd/products/getAll');
       setProducts({ loading: false, data: products.data });
+
+      // console.log(products);
+      // console.log(products['data'][0].salePrice);
+
+      // const dataProductsMenor = products['data'];
+      // dataProductsMenor.sort(((a,b) => a.salePrice - b.salePrice));
+      // console.log(dataProductsMenor);
+
     } catch (error) {}
   };
 
@@ -20,7 +29,10 @@ const PurchasesSfl = () => {
     getProducts();
   }, []);
 
-  return <PurchasesStl products={products} />;
+
+
+
+  return <PurchasesStl products={products}  />;
 };
 
 export default PurchasesSfl;
